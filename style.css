@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Cactus+Classical+Serif&family=Calistoga&family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Cactus+Classical+Serif&family=Calistoga&family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Staatliches&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+/* Estilos gerais do html */
+html, 
+body {
+   margin: 0; 
+   padding: 0;
+   scroll-behavior: smooth;
+   box-sizing: border-box;
+}
+
+body {
+    background-color: #090B10;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    background-color: #090B10;
+    width: 10px;
+}
+
+::-webkit-scrolbar-thumb {
+    background: linear-gradient(360deg, #090B10 0%, #65F5FF 100%);
+    border-radius: 50px;
+}
+
+::selection {
+    background-color: #3f8e94;
+}
+
+/* Estilos gerais de componentes */
+* {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Página principal */
+main {
+    display: flex;
+    flex-direction: column;
+
+    .page-all {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px;
+        height: 100%;
+        margin: 12.5% 0 20px 0;
+        position: relative;
+        transform: translateX(-80px);
+
+        aside {
+            position: sticky;
+            top: 10%;
+            height: auto;
+
+            h2 {
+                background: linear-gradient(90deg, #65F5FF 0%, #B0AAFF 100%);
+                background-clip: text;
+                color: transparent;
+
+                font-size: 96px;
+                font-weight: 900;
+                user-select: none;
+            }
+        }
+
+        .gastos {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            .title {
+                text-align: center;
+
+                h3 {
+                    font-size: 24px;
+                    font-weight: 300;
+                    letter-spacing: 15px;
+                }
+
+                h1 {
+                    font-size: 64px;
+                    font-weight: 800;
+                    position: relative;
+                }
+
+                .vetor-title {
+                    position: absolute;
+                    user-select: none;
+                    pointer-events: none;
+                }
+            }
+
+            .months-content {
+                .months-table {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    h3 {
+                        font-size: 25px;
+                        font-weight: 100;
+                        font-family: "Playfair Display", serif;
+                    }
+                }
+
+                table {
+                    width: 567px;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                    font-size: 1rem;
+                    font-family: Arial, sans-serif;
+                    text-align: left;
+                    user-select: none;
+
+                    thead {
+                        background-color: #0f131b;
+                        color: white;
+                    }
+
+                    th,
+                    td {
+                        border: 1px solid #dddddd77;
+                        padding: 12px;
+                    }
+
+                    tr:nth-child(even) {
+                        background-color: #0a0d16;
+                    }
+
+                    tr:hover {
+                        background-color: #65f5ff0c;
+                    }
+
+                    th {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    main {
+        .page-all {
+            transform: none;
+            .gastos {
+                .title {
+                    h1 {
+                        font-size: 50px;
+                        max-width: 300px;
+                    }
+
+                    .vetor-title {
+                        width: 170px;
+                        left: 47%;
+                    }
+                }
+
+                .months-content {
+                    .months-table{
+                        h3 {
+                            font-size: 20px;
+                        }
+                    }
+
+                    table {
+                        width: 400px;
+                        overflow: scroll;
+                    }
+                }
+            }
+
+            aside {
+                h2 {
+                    font-size: 60px;
+                }
+            }
+        }
+    }
+}
+
+@media (maz-width: 550px) {
+    main {
+        .page-all {
+            gap: 20px;
+            justify-content: start;
+            padding: 0 20px;
+
+            .gastos {
+                .title {
+                    text-align: start;
+
+                    .vetor-title {
+                        left: 30%;
+                    }
+                }
+
+                .months-content {
+                    table {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    main {
+        .page-all {
+            .gastos {
+                .months-content {
+                    table {
+                        width: 230px;
+                    }
+                }
+            }
+        }
+    }
+}
